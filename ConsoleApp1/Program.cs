@@ -249,8 +249,8 @@ namespace ConsoleApp1
 				catch(Exception ex)
 				{
 					IpAddressPingChecker pingChecker = new IpAddressPingChecker();
-					Console.WriteLine(ex.Message);
-					log.WriteLogFile(ex.Message);
+					//Console.WriteLine(ex.Message);
+					//log.WriteLogFile(ex.Message);
 					return ex.Message;
 				}
 			}
@@ -274,7 +274,7 @@ namespace ConsoleApp1
 
 		public ServiceLogWriter(){
 			currentDateTime = DateTime.Now;
-			logFile = currentDateTime.ToShortDateString()+"_"+currentDateTime.Hour+"_"+currentDateTime.Minute + ".log";
+			logFile = currentDateTime.ToShortDateString()+"_"+currentDateTime.Hour + ".log";
 			filePath = AppDomain.CurrentDomain.BaseDirectory + @"\Logs\"+logFile;
 		
 		}
@@ -318,7 +318,7 @@ namespace ConsoleApp1
 		public ServiceLogCleaner()
 		{
 			currentDateTime = DateTime.Now;
-			logFileName = currentDateTime.ToShortDateString() + "_" + currentDateTime.Hour + "_" + currentDateTime.Minute + ".log";
+			logFileName = currentDateTime.ToShortDateString() + "_" + currentDateTime.Hour + ".log";
 		}
 
 		private void GetCurrentDateTime()
